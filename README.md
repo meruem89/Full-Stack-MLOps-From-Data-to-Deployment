@@ -1,33 +1,38 @@
-**#🚀 Full-Stack-MLOps-Pipeline**
+
+---
+
+# 🚀 Full-Stack-MLOps
+
+This project demonstrates an **end-to-end Machine Learning (ML) pipeline** with full **MLOps integration** — from data ingestion to deployment and monitoring on **AWS EKS**, with experiment tracking, version control, CI/CD, and observability.
 
 ---
 
 ## 📂 Project Structure
 
-- **Cookiecutter Data Science Template**
+* **Cookiecutter Data Science Template**
 
-- **src/**
+* **src/**
 
-  - `logger/` – Logging utilities
-  - `data_ingestion.py` – Data collection & ingestion
-  - `data_preprocessing.py` – Data cleaning & transformation
-  - `feature_engineering.py` – Feature extraction
-  - `model_building.py` – Model training
-  - `model_evaluation.py` – Model performance evaluation
-  - `register_model.py` – Model registry
+  * `logger/` – Logging utilities
+  * `data_ingestion.py` – Data collection & ingestion
+  * `data_preprocessing.py` – Data cleaning & transformation
+  * `feature_engineering.py` – Feature extraction
+  * `model_building.py` – Model training
+  * `model_evaluation.py` – Model performance evaluation
+  * `register_model.py` – Model registry
 
-- **DVC Pipeline**
+* **DVC Pipeline**
 
-  - `params.yaml` – Configurable parameters
-  - `dvc.yaml` – DVC pipeline definition
+  * `params.yaml` – Configurable parameters
+  * `dvc.yaml` – DVC pipeline definition
 
-- **flask_app/** – REST API for model serving
+* **flask\_app/** – REST API for model serving
 
-- **tests/** & **scripts/** – CI/CD tests and helper scripts
+* **tests/** & **scripts/** – CI/CD tests and helper scripts
 
-- **.github/workflows/** – CI/CD pipeline configs
+* **.github/workflows/** – CI/CD pipeline configs
 
-- **Dockerfile** – Containerization setup
+* **Dockerfile** – Containerization setup
 
 ---
 
@@ -43,20 +48,20 @@ pip install cookiecutter dagshub mlflow dvc[s3] awscli flask
 
 ### 📦 2. Project Initialization
 
-- Clone repo & apply Cookiecutter template
-- Initialize Git & push changes
-- Configure MLflow tracking via [DagsHub](https://dagshub.com)
+* Clone repo & apply Cookiecutter template
+* Initialize Git & push changes
+* Configure MLflow tracking via [DagsHub](https://dagshub.com)
 
 ### 📊 3. Experiment Tracking & Data Versioning
 
-- MLflow for experiment tracking
-- DVC for dataset & pipeline versioning
-- Remote storage: **AWS S3**
+* MLflow for experiment tracking
+* DVC for dataset & pipeline versioning
+* Remote storage: **AWS S3**
 
 ### 🐳 4. Containerization
 
-- Generate `requirements.txt` & `pipreqs`
-- Build Docker image:
+* Generate `requirements.txt` & `pipreqs`
+* Build Docker image:
 
   ```bash
   docker build -t capstone-app:latest .
@@ -65,55 +70,54 @@ pip install cookiecutter dagshub mlflow dvc[s3] awscli flask
 
 ### 🔄 5. CI/CD with GitHub Actions
 
-- Automated build & test pipeline
-- Push Docker images to **AWS ECR**
+* Automated build & test pipeline
+* Push Docker images to **AWS ECR**
 
 ### ☸️ 6. Deployment on AWS EKS
 
-- Install & configure `awscli`, `kubectl`, `eksctl`
-- Create EKS cluster:
+* Install & configure `awscli`, `kubectl`, `eksctl`
+* Create EKS cluster:
 
   ```bash
   eksctl create cluster --name flask-app-cluster --region us-east-1
   ```
-
-- Deploy Flask app with Kubernetes manifests
-- Expose via LoadBalancer & test using external IP
+* Deploy Flask app with Kubernetes manifests
+* Expose via LoadBalancer & test using external IP
 
 ### 📈 7. Monitoring & Observability
 
-- **Prometheus** – Metrics scraping from Flask app
-- **Grafana** – Interactive dashboards for monitoring
+* **Prometheus** – Metrics scraping from Flask app
+* **Grafana** – Interactive dashboards for monitoring
 
 ---
 
 ## 📡 Tech Stack
 
-- **Languages & Frameworks:** Python, Flask
-- **Experiment Tracking:** MLflow (via Dagshub)
-- **Data Versioning:** DVC + AWS S3
-- **Containerization:** Docker
-- **Orchestration:** Kubernetes (EKS)
-- **CI/CD:** GitHub Actions + AWS ECR
-- **Monitoring:** Prometheus & Grafana
+* **Languages & Frameworks:** Python, Flask
+* **Experiment Tracking:** MLflow (via Dagshub)
+* **Data Versioning:** DVC + AWS S3
+* **Containerization:** Docker
+* **Orchestration:** Kubernetes (EKS)
+* **CI/CD:** GitHub Actions + AWS ECR
+* **Monitoring:** Prometheus & Grafana
 
 ---
 
 ## 🔐 Secrets & Environment Variables
 
-- **AWS_ACCESS_KEY_ID**
-- **AWS_SECRET_ACCESS_KEY**
-- **AWS_REGION**
-- **ECR_REPOSITORY**
-- **AWS_ACCOUNT_ID**
-- **CAPSTONE_TEST** (Dagshub Token)
+* **AWS\_ACCESS\_KEY\_ID**
+* **AWS\_SECRET\_ACCESS\_KEY**
+* **AWS\_REGION**
+* **ECR\_REPOSITORY**
+* **AWS\_ACCOUNT\_ID**
+* **CAPSTONE\_TEST** (Dagshub Token)
 
 ---
 
 ## 📊 Monitoring Dashboard
 
-- **Prometheus:** `http://<EC2-Public-IP>:9090`
-- **Grafana:** `http://<EC2-Public-IP>:3000` (Default: `admin/admin`)
+* **Prometheus:** `http://<EC2-Public-IP>:9090`
+* **Grafana:** `http://<EC2-Public-IP>:3000` (Default: `admin/admin`)
 
 ---
 
@@ -130,9 +134,9 @@ eksctl delete cluster --name flask-app-cluster --region us-east-1
 
 ## 📘 Additional Notes
 
-- **CloudFormation**: EKS relies on AWS CloudFormation to provision infrastructure.
-- **PVCs**: Persistent Volume Claims manage storage for Kubernetes pods.
-- **Fleet Requests**: Ensure quota is not exceeded during NodeGroup creation.
+* **CloudFormation**: EKS relies on AWS CloudFormation to provision infrastructure.
+* **PVCs**: Persistent Volume Claims manage storage for Kubernetes pods.
+* **Fleet Requests**: Ensure quota is not exceeded during NodeGroup creation.
 
 ---
 
@@ -148,16 +152,15 @@ eksctl delete cluster --name flask-app-cluster --region us-east-1
 
 ## 🚀 Future Enhancements
 
-- Add automated hyperparameter tuning
-- Expand monitoring with alerting (Grafana Alerts / AWS CloudWatch)
-- Integrate with Terraform for IaC
+* Add automated hyperparameter tuning
+* Expand monitoring with alerting (Grafana Alerts / AWS CloudWatch)
+* Integrate with Terraform for IaC
 
 ---
 
-🔗 **Author:** _\[Your Name]_
-📌 **GitHub Repository:** _\[Link to your repo]_
+🔗 **Author:** *\[Your Name]*
+📌 **GitHub Repository:** *\[Link to your repo]*
 
 ---
 
 Do you want me to make this **README more visual** (badges, workflow diagram, architecture diagram placeholders, shields for tech stack), so that it looks like a polished **open-source style project**?
-
